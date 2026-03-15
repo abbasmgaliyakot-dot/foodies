@@ -203,7 +203,7 @@ const ReceptionDashboard = () => {
         </style>
       </head>
       <body>
-        <div class="restaurant-name">BistroFlow</div>
+        <div class="restaurant-name">Foodies Junction</div>
         <h1>BILL</h1>
         <div class="bill-info">
           <div>Table: ${selectedOrder.table_number}</div>

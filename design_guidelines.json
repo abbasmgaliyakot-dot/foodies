@@ -141,8 +141,9 @@
       }
     ],
     "logo": {
-      "text_fallback": "BistroFlow",
-      "style": "font-bold text-2xl tracking-tighter text-orange-600"
+      "text_fallback": "Foodies Junction",
+      "style": "font-bold text-2xl tracking-tighter text-orange-600",
+      "image_url": "https://customer-assets.emergentagent.com/job_dine-orders-1/artifacts/wkjm3b6v_IMG_6175.jpeg"
     }
   },
   "tech_stack_instructions": {

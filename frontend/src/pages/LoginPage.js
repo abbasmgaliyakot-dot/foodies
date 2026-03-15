@@ -36,15 +36,14 @@ const LoginPage = () => {
       <Card className="w-full max-w-md border-slate-200 shadow-lg">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            {/* Replace YOUR_LOGO_URL with your actual logo URL */}
             <img 
-              src="/logo.png" 
-              alt="Restaurant Logo" 
-              className="w-24 h-24 object-contain"
+              src="https://customer-assets.emergentagent.com/job_dine-orders-1/artifacts/wkjm3b6v_IMG_6175.jpeg" 
+              alt="Foodies Junction Logo" 
+              className="w-32 h-32 object-contain"
             />
           </div>
           <div>
-            <CardTitle className="text-3xl font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>BistroFlow</CardTitle>
+            <CardTitle className="text-3xl font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>Foodies Junction</CardTitle>
             <CardDescription className="text-slate-600 mt-2">Sign in to manage your restaurant</CardDescription>
           </div>
         </CardHeader>
