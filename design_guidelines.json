@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a distinct, high-efficiency restaurant management interface that avoids the 'generic SaaS' look. Focus on clarity, speed, and tactile interactions.",
+    "principles": [
+      "Fusion over Imitation: Mix Swiss typographic precision with warm, appetizing color palettes.",
+      "Emotion First: The UI should feel 'crisp' and 'ready-to-serve'.",
+      "Content is King: The food and the orders are the heroes. The UI is the plate.",
+      "Zoom In: High legibility for waiters in motion.",
+      "Negative Space: Dense information needs breathing room. Use whitespace to separate table statuses."
+    ],
+    "anti_patterns": [
+      "Purple/Teal primary buttons (forbidden).",
+      "Gradients on buttons (forbidden - use solid colors).",
+      "Center-aligned text for data tables (use left alignment).",
+      "Generic 'Inter' for headings (use DM Sans).",
+      "Default Shadcn Card shadows (use custom subtle borders)."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "DM Sans, sans-serif",
+      "weights": ["500", "700"],
+      "tracking": "-0.02em",
+      "usage": "Page titles, Table numbers, Bill totals"
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Menu items, Order details, timestamps"
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "usage": "Order IDs, Prices, Kitchen tickets"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#1A1A1A", 
+      "background": "#F8F9FA",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "brand": {
+        "orange": "#E14D2A",
+        "orange_hover": "#C24123",
+        "orange_subtle": "#FFF1EE"
+      },
+      "status": {
+        "success": "#10B981",
+        "success_bg": "#ECFDF5",
+        "warning": "#F59E0B",
+        "warning_bg": "#FFFBEB",
+        "error": "#EF4444",
+        "error_bg": "#FEF2F2",
+        "info": "#3B82F6",
+        "info_bg": "#EFF6FF"
+      },
+      "neutral": {
+        "100": "#F1F5F9",
+        "200": "#E2E8F0",
+        "400": "#94A3B8",
+        "600": "#475569",
+        "900": "#0F172A"
+      }
+    },
+    "usage_rules": {
+      "primary_action": "bg-[#E14D2A] text-white hover:bg-[#C24123]",
+      "secondary_action": "bg-white border border-slate-200 text-slate-900 hover:bg-slate-50",
+      "table_available": "bg-white border-2 border-slate-200 text-slate-600",
+      "table_running": "bg-orange-50 border-2 border-orange-500 text-orange-900",
+      "table_closed": "bg-slate-100 border-2 border-slate-300 text-slate-400 opacity-70",
+      "text_main": "text-slate-900",
+      "text_muted": "text-slate-500"
+    }
+  },
+  "components": {
+    "buttons": {
+      "radius": "rounded-full",
+      "padding": "px-6 py-2",
+      "shadow": "shadow-none",
+      "typography": "font-medium tracking-wide"
+    },
+    "cards": {
+      "radius": "rounded-xl",
+      "border": "border border-slate-200",
+      "shadow": "shadow-sm hover:shadow-md transition-shadow duration-200",
+      "bg": "bg-white"
+    },
+    "inputs": {
+      "radius": "rounded-lg",
+      "border": "border-slate-200 focus:border-orange-500 focus:ring-orange-500",
+      "bg": "bg-white"
+    },
+    "navigation": {
+      "mobile_bottom_bar": "fixed bottom-0 w-full bg-white border-t border-slate-200 h-16 flex items-center justify-around z-50",
+      "desktop_sidebar": "w-64 bg-slate-900 text-white h-screen fixed left-0 top-0 p-6 flex flex-col gap-4"
+    }
+  },
+  "layout_strategies": {
+    "mobile_staff": {
+      "grid": "grid-cols-2 gap-4 p-4 pb-24",
+      "header": "sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-100 z-40 p-4",
+      "card_style": "flex flex-col items-center justify-center aspect-square rounded-2xl border-2 transition-all active:scale-95"
+    },
+    "reception_dashboard": {
+      "grid": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8",
+      "table_view": "Bento-style grid. Large tables span 2 cols.",
+      "bill_section": "Fixed right panel or drawer for checkout."
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "soft": "0 2px 8px -2px rgba(0,0,0,0.05)",
+      "elevated": "0 10px 30px -10px rgba(0,0,0,0.1)"
+    },
+    "borders": {
+      "subtle": "1px solid #E2E8F0",
+      "active": "2px solid #E14D2A"
+    },
+    "micro_interactions": {
+      "hover_lift": "hover:-translate-y-1 transition-transform duration-200",
+      "click_press": "active:scale-95 transition-transform duration-100"
+    }
+  },
+  "images": {
+    "placeholders": [
+      {
+        "category": "ambiance",
+        "url": "https://images.unsplash.com/photo-1742633882701-63993d9026f8?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Restaurant Bar"
+      },
+      {
+        "category": "food_default",
+        "url": "https://images.unsplash.com/photo-1765894711192-d35787eee3b6?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Default Food Item"
+      },
+      {
+        "category": "dining",
+        "url": "https://images.unsplash.com/photo-1767785445931-c4c57ae1b4e2?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Dining Experience"
+      }
+    ],
+    "logo": {
+      "text_fallback": "BistroFlow",
+      "style": "font-bold text-2xl tracking-tighter text-orange-600"
+    }
+  },
+  "tech_stack_instructions": {
+    "icons": "lucide-react",
+    "toast": "sonner",
+    "charts": "recharts (via shadcn/ui charts)",
+    "date_handling": "date-fns",
+    "state_management": "React Context or Zustand (if needed)",
+    "styling": "Tailwind CSS + clsx + tailwind-merge"
+  },
+  "universal_guidelines": [
+    "Use 'DM Sans' for all headings. Import it in index.css.",
+    "Do NOT use gradients for buttons. Solid colors only.",
+    "Ensure 44px min touch target size for mobile buttons.",
+    "Use 'sonner' for all notifications (order added, error, etc).",
+    "Table cards must show status clearly with color coding (Green/White/Red).",
+    "Kitchen print view should be a simple modal with monospace font.",
+    "All interactive elements MUST have 'data-testid' attributes.",
+    "Do NOT center align the app container. Use full width."
+  ]
+}
