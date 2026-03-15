@@ -308,7 +308,7 @@ const ReceptionDashboard = () => {
                 <Card
                   key={order.id}
                   className={`p-6 border-2 transition-all hover:shadow-lg ${
-                    hasNewItems(order) ? 'border-[#E14D2A] bg-orange-50' : 'border-slate-200'
+                    hasNewItems(order) ? 'border-[#C9A961] bg-[#FFF8ED]' : 'border-slate-200'
                   }`}
                   data-testid={`order-card-${order.table_number}`}
                 >
@@ -322,7 +322,7 @@ const ReceptionDashboard = () => {
                       </div>
                     </div>
                     {hasNewItems(order) && (
-                      <div className="bg-[#E14D2A] text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                      <div className="bg-[#C9A961] text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
                         NEW
                       </div>
                     )}
@@ -333,7 +333,7 @@ const ReceptionDashboard = () => {
                       <div
                         key={index}
                         className={`flex justify-between p-2 rounded ${
-                          item.is_new ? 'bg-[#FFF1EE] border border-[#E14D2A]' : 'bg-slate-50'
+                          item.is_new ? 'bg-[#FFF8ED] border border-[#C9A961]' : 'bg-slate-50'
                         }`}
                       >
                         <div>
@@ -347,7 +347,7 @@ const ReceptionDashboard = () => {
 
                   <div className="flex justify-between items-center mb-4 pt-4 border-t border-slate-200">
                     <span className="font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>Total</span>
-                    <span className="text-2xl font-bold mono text-[#E14D2A]">{formatPrice(order.total)}</span>
+                    <span className="text-2xl font-bold mono text-[#C9A961]">{formatPrice(order.total)}</span>
                   </div>
 
                   <div className="flex gap-2">
@@ -355,7 +355,7 @@ const ReceptionDashboard = () => {
                       <Button
                         onClick={() => acknowledgeOrder(order.id)}
                         variant="outline"
-                        className="flex-1 rounded-full border-[#E14D2A] text-[#E14D2A] hover:bg-[#E14D2A] hover:text-white"
+                        className="flex-1 rounded-full border-[#C9A961] text-[#C9A961] hover:bg-[#C9A961] hover:text-white"
                         data-testid={`acknowledge-button-${order.table_number}`}
                       >
                         <Check className="w-4 h-4 mr-2" />
@@ -373,7 +373,7 @@ const ReceptionDashboard = () => {
                     </Button>
                     <Button
                       onClick={() => generateBill(order)}
-                      className="flex-1 bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                      className="flex-1 bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                       data-testid={`bill-button-${order.table_number}`}
                     >
                       Bill
@@ -426,7 +426,7 @@ const ReceptionDashboard = () => {
                 </Button>
                 <Button
                   onClick={completeOrder}
-                  className="flex-1 bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                  className="flex-1 bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                   data-testid="complete-order-button"
                 >
                   Complete & Close

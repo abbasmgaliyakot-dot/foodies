@@ -75,7 +75,7 @@ const LoginPage = () => {
             </div>
             <Button
               type="submit"
-              className="w-full bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full font-medium"
+              className="w-full bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full font-medium"
               disabled={loading}
               data-testid="login-button"
             >

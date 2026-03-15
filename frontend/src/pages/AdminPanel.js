@@ -284,7 +284,7 @@ const AdminPanel = () => {
                 </div>
                 <Button
                   onClick={saveSettings}
-                  className="w-full bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                  className="w-full bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                   data-testid="save-settings-button"
                 >
                   Save Settings
@@ -322,7 +322,7 @@ const AdminPanel = () => {
                 }
               }}>
                 <DialogTrigger asChild>
-                  <Button className="bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full" data-testid="add-menu-item-button">
+                  <Button className="bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full" data-testid="add-menu-item-button">
                     <Plus className="w-4 h-4 mr-2" />
                     Add Menu Item
                   </Button>
@@ -372,7 +372,7 @@ const AdminPanel = () => {
                     </div>
                     <Button
                       onClick={saveMenuItem}
-                      className="w-full bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                      className="w-full bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                       data-testid="save-menu-item-button"
                     >
                       {editingItem ? 'Update' : 'Create'} Item
@@ -445,7 +445,7 @@ const AdminPanel = () => {
                 }
               }}>
                 <DialogTrigger asChild>
-                  <Button className="bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full" data-testid="add-table-button">
+                  <Button className="bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full" data-testid="add-table-button">
                     <Plus className="w-4 h-4 mr-2" />
                     Add Table
                   </Button>
@@ -476,7 +476,7 @@ const AdminPanel = () => {
                     </div>
                     <Button
                       onClick={saveTable}
-                      className="w-full bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                      className="w-full bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                       data-testid="save-table-button"
                     >
                       {editingItem ? 'Update' : 'Create'} Table
@@ -535,7 +535,7 @@ const AdminPanel = () => {
               <h2 className="text-xl font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>Staff Users</h2>
               <Dialog open={showUserDialog} onOpenChange={setShowUserDialog}>
                 <DialogTrigger asChild>
-                  <Button className="bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full" data-testid="add-user-button">
+                  <Button className="bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full" data-testid="add-user-button">
                     <Plus className="w-4 h-4 mr-2" />
                     Add User
                   </Button>
@@ -578,7 +578,7 @@ const AdminPanel = () => {
                     </div>
                     <Button
                       onClick={createUser}
-                      className="w-full bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full"
+                      className="w-full bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full"
                       data-testid="create-user-button"
                     >
                       Create User

@@ -191,7 +191,7 @@ const StaffView = () => {
       case 'available':
         return 'bg-white border-2 border-slate-200 text-slate-600';
       case 'running':
-        return 'bg-orange-50 border-2 border-[#E14D2A] text-[#E14D2A]';
+        return 'bg-[#FFF8ED] border-2 border-[#C9A961] text-[#B8945F]';
       case 'closed':
         return 'bg-slate-100 border-2 border-slate-300 text-slate-400 opacity-70';
       default:
@@ -335,10 +335,10 @@ const StaffView = () => {
                 <h3 className="font-medium mb-3">Cart</h3>
                 <div className="space-y-2">
                   {cart.map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-orange-50 border border-orange-200 rounded-lg" data-testid={`cart-item-${index}`}>
+                    <div key={index} className="flex items-center justify-between p-3 bg-[#FFF8ED] border border-[#C9A961] rounded-lg" data-testid={`cart-item-${index}`}>
                       <div className="flex-1">
                         <div className="font-medium">{item.item_name}</div>
-                        {item.is_manual && <div className="text-xs text-orange-600">Manual Entry</div>}
+                        {item.is_manual && <div className="text-xs text-[#B8945F]">Manual Entry</div>}
                       </div>
                       <div className="flex items-center gap-2">
                         <Button
@@ -380,7 +380,7 @@ const StaffView = () => {
                 </div>
                 <Button
                   onClick={submitOrder}
-                  className="w-full mt-4 bg-[#E14D2A] hover:bg-[#C24123] text-white rounded-full font-medium"
+                  className="w-full mt-4 bg-[#C9A961] hover:bg-[#B8945F] text-white rounded-full font-medium"
                   data-testid="submit-order-button"
                 >
                   Submit Order
@@ -405,7 +405,7 @@ const StaffView = () => {
                 </div>
                 <div className="flex justify-between items-center mt-4 pt-4 border-t">
                   <div className="text-lg font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>Order Total</div>
-                  <div className="text-2xl font-bold mono text-[#E14D2A]">{formatPrice(currentOrder.total)}</div>
+                  <div className="text-2xl font-bold mono text-[#C9A961]">{formatPrice(currentOrder.total)}</div>
                 </div>
                 <Button
                   onClick={cancelOrder}
