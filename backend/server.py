@@ -205,7 +205,7 @@ async def get_users(current_user: UserResponse = Depends(get_current_user)):
     if current_user.role != "admin":
         raise HTTPException(status_code=403, detail="Admin access required")
     
-    users = await db.users.find({}, {"_id": 0, "password_hash": 0}).to_list(1000)
+    users = await db.users.find({}, {"_id": 0, "password_hash": 0}).limit(1000).to_list(None)
     return [UserResponse(**user) for user in users]
 
 @api_router.delete("/users/{user_id}", status_code=204)
@@ -244,7 +244,7 @@ async def create_table(table: TableCreate, current_user: UserResponse = Depends(
 
 @api_router.get("/tables", response_model=List[TableResponse])
 async def get_tables(current_user: UserResponse = Depends(get_current_user)):
-    tables = await db.tables.find({}, {"_id": 0}).to_list(1000)
+    tables = await db.tables.find({}, {"_id": 0}).limit(1000).to_list(None)
     return [TableResponse(**table) for table in tables]
 
 @api_router.put("/tables/{table_id}", response_model=TableResponse)
@@ -297,7 +297,7 @@ async def create_menu_item(item: MenuItemCreate, current_user: UserResponse = De
 
 @api_router.get("/menu", response_model=List[MenuItemResponse])
 async def get_menu(current_user: UserResponse = Depends(get_current_user)):
-    items = await db.menu_items.find({}, {"_id": 0}).to_list(1000)
+    items = await db.menu_items.find({}, {"_id": 0}).limit(1000).to_list(None)
     return [MenuItemResponse(**item) for item in items]
 
 @api_router.get("/menu/search")
@@ -416,7 +416,7 @@ async def get_orders(status: Optional[str] = None, current_user: UserResponse = 
     if status:
         query["status"] = status
     
-    orders = await db.orders.find(query, {"_id": 0}).to_list(1000)
+    orders = await db.orders.find(query, {"_id": 0}).limit(1000).to_list(None)
     return [OrderResponse(**order) for order in orders]
 
 @api_router.get("/orders/{order_id}", response_model=OrderResponse)
