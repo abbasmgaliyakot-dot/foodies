@@ -1,0 +1,855 @@
+{
+  "summary": {
+    "total_tests": 40,
+    "passed": 40,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "details": [
+    {
+      "test": "Admin Login",
+      "status": "PASS",
+      "response": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NjhlMjEzMS0yZmU3LTQxMmEtYWY5Ni03NDljOTNlZGIwZGMiLCJleHAiOjE3NzQxNjQ5NzJ9.UL-crqn1bPJ-q7wL4B5YvguXSYULVJjhhhgULehVtuE",
+        "token_type": "bearer",
+        "user": {
+          "id": "968e2131-2fe7-412a-af96-749c93edb0dc",
+          "username": "admin",
+          "role": "admin"
+        }
+      }
+    },
+    {
+      "test": "Staff Login",
+      "status": "PASS",
+      "response": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYWJmOGE0NS0zOWQwLTRjNWEtYWU5OS0xMWE0OTBhNzUzNTYiLCJleHAiOjE3NzQxNjQ5NzJ9.GgjpCukh2qmGack1Md6P9VGcY9WqYOKV7W0yfchDqAI",
+        "token_type": "bearer",
+        "user": {
+          "id": "0abf8a45-39d0-4c5a-ae99-11a490a75356",
+          "username": "staff",
+          "role": "staff"
+        }
+      }
+    },
+    {
+      "test": "Invalid Login",
+      "status": "PASS",
+      "response": {
+        "detail": "Invalid credentials"
+      }
+    },
+    {
+      "test": "Get Tables (Admin)",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "capacity": 2,
+          "status": "running",
+          "current_order_id": "859c8dab-d135-424c-ab21-7c40454113e7"
+        },
+        {
+          "id": "90cf27ee-b93b-42d7-a42f-acfe4e935790",
+          "table_number": "T3",
+          "capacity": 6,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "9fc2d62b-191c-4880-9cf1-1974f2fc4244",
+          "table_number": "T4",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "c6374f62-ae21-479e-8760-9c5b99c751fe",
+          "table_number": "T5",
+          "capacity": 2,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "1324c392-db6d-4385-b106-2785c4e92397",
+          "table_number": "T6",
+          "capacity": 8,
+          "status": "available",
+          "current_order_id": null
+        }
+      ]
+    },
+    {
+      "test": "Get Tables (Staff)",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "capacity": 2,
+          "status": "running",
+          "current_order_id": "859c8dab-d135-424c-ab21-7c40454113e7"
+        },
+        {
+          "id": "90cf27ee-b93b-42d7-a42f-acfe4e935790",
+          "table_number": "T3",
+          "capacity": 6,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "9fc2d62b-191c-4880-9cf1-1974f2fc4244",
+          "table_number": "T4",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "c6374f62-ae21-479e-8760-9c5b99c751fe",
+          "table_number": "T5",
+          "capacity": 2,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "1324c392-db6d-4385-b106-2785c4e92397",
+          "table_number": "T6",
+          "capacity": 8,
+          "status": "available",
+          "current_order_id": null
+        }
+      ]
+    },
+    {
+      "test": "Create Table (Admin)",
+      "status": "PASS",
+      "response": {
+        "id": "606db10c-947b-4d98-8671-009d34d6a0d8",
+        "table_number": "TEST-T1",
+        "capacity": 4,
+        "status": "available",
+        "current_order_id": null
+      }
+    },
+    {
+      "test": "Create Table (Staff - Should Fail)",
+      "status": "PASS",
+      "response": {
+        "detail": "Admin access required"
+      }
+    },
+    {
+      "test": "Update Table",
+      "status": "PASS",
+      "response": {
+        "id": "606db10c-947b-4d98-8671-009d34d6a0d8",
+        "table_number": "TEST-T1-UPDATED",
+        "capacity": 6,
+        "status": "available",
+        "current_order_id": null
+      }
+    },
+    {
+      "test": "Delete Table",
+      "status": "PASS",
+      "response": null
+    },
+    {
+      "test": "Get Menu Items",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+          "name": "Butter Chicken",
+          "category": "Main Course",
+          "price": 15.99,
+          "description": "Creamy tomato curry"
+        },
+        {
+          "id": "42c60f6b-ae7e-4e32-b8f8-1ba2329dee14",
+          "name": "Grilled Salmon",
+          "category": "Main Course",
+          "price": 22.99,
+          "description": "Fresh Atlantic salmon"
+        },
+        {
+          "id": "0d7d7b7e-ce30-4f69-8570-7047ef7217e1",
+          "name": "Margherita Pizza",
+          "category": "Main Course",
+          "price": 12.99,
+          "description": "Classic tomato and mozzarella"
+        },
+        {
+          "id": "2fea7ed2-a8f4-4ab1-992b-18902b006244",
+          "name": "Caesar Salad",
+          "category": "Appetizers",
+          "price": 8.99,
+          "description": "Crispy romaine with parmesan"
+        },
+        {
+          "id": "c9ec950e-90b4-425a-96a2-503e61aee92d",
+          "name": "Garlic Bread",
+          "category": "Appetizers",
+          "price": 5.99,
+          "description": "Toasted with herbs"
+        },
+        {
+          "id": "466def11-62c9-4684-832d-3eb0a91b6d5d",
+          "name": "Chocolate Lava Cake",
+          "category": "Desserts",
+          "price": 7.99,
+          "description": "Warm chocolate cake"
+        },
+        {
+          "id": "3c7852f3-605b-4ac3-8940-c15cfdb1af3f",
+          "name": "Tiramisu",
+          "category": "Desserts",
+          "price": 8.99,
+          "description": "Classic Italian dessert"
+        },
+        {
+          "id": "256ab959-2a08-4652-918e-ec19845feef1",
+          "name": "Coke",
+          "category": "Beverages",
+          "price": 2.99,
+          "description": "Chilled soft drink"
+        },
+        {
+          "id": "0bb7bf61-04b7-4539-a985-2c28439bdd43",
+          "name": "Fresh Juice",
+          "category": "Beverages",
+          "price": 4.99,
+          "description": "Orange or apple"
+        },
+        {
+          "id": "da9ad8b2-503d-4089-b1b2-e4230d84ce97",
+          "name": "Coffee",
+          "category": "Beverages",
+          "price": 3.99,
+          "description": "Freshly brewed"
+        },
+        {
+          "id": "2e83ce32-5c49-455c-b63f-9b078de78f16",
+          "name": "Test Pizza",
+          "category": "Main Course",
+          "price": 16.99,
+          "description": "Test pizza for automation"
+        }
+      ]
+    },
+    {
+      "test": "Search Menu ('But')",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+          "name": "Butter Chicken",
+          "category": "Main Course",
+          "price": 15.99,
+          "description": "Creamy tomato curry"
+        }
+      ]
+    },
+    {
+      "test": "Create Menu Item (Admin)",
+      "status": "PASS",
+      "response": {
+        "id": "9b2c8b43-ab99-4593-b3a1-958da055b7aa",
+        "name": "Test Burger",
+        "category": "Test Category",
+        "price": 15.99,
+        "description": "A test burger for testing"
+      }
+    },
+    {
+      "test": "Create Menu Item (Staff - Should Fail)",
+      "status": "PASS",
+      "response": {
+        "detail": "Admin access required"
+      }
+    },
+    {
+      "test": "Update Menu Item",
+      "status": "PASS",
+      "response": {
+        "id": "9b2c8b43-ab99-4593-b3a1-958da055b7aa",
+        "name": "Test Burger Updated",
+        "category": "Test Category",
+        "price": 17.99,
+        "description": "An updated test burger"
+      }
+    },
+    {
+      "test": "Delete Menu Item",
+      "status": "PASS",
+      "response": null
+    },
+    {
+      "test": "Get Tables for Order Test",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "capacity": 2,
+          "status": "running",
+          "current_order_id": "859c8dab-d135-424c-ab21-7c40454113e7"
+        },
+        {
+          "id": "90cf27ee-b93b-42d7-a42f-acfe4e935790",
+          "table_number": "T3",
+          "capacity": 6,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "9fc2d62b-191c-4880-9cf1-1974f2fc4244",
+          "table_number": "T4",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "c6374f62-ae21-479e-8760-9c5b99c751fe",
+          "table_number": "T5",
+          "capacity": 2,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "1324c392-db6d-4385-b106-2785c4e92397",
+          "table_number": "T6",
+          "capacity": 8,
+          "status": "available",
+          "current_order_id": null
+        }
+      ]
+    },
+    {
+      "test": "Create Order",
+      "status": "PASS",
+      "response": {
+        "id": "323bf7eb-9419-45a3-bf9e-3e55f6c4500c",
+        "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+        "table_number": "T1",
+        "items": [],
+        "total": 0.0,
+        "status": "active",
+        "created_at": "2026-03-15T07:36:14.637209+00:00",
+        "updated_at": "2026-03-15T07:36:14.637209+00:00"
+      }
+    },
+    {
+      "test": "Get Menu for Order",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+          "name": "Butter Chicken",
+          "category": "Main Course",
+          "price": 15.99,
+          "description": "Creamy tomato curry"
+        },
+        {
+          "id": "42c60f6b-ae7e-4e32-b8f8-1ba2329dee14",
+          "name": "Grilled Salmon",
+          "category": "Main Course",
+          "price": 22.99,
+          "description": "Fresh Atlantic salmon"
+        },
+        {
+          "id": "0d7d7b7e-ce30-4f69-8570-7047ef7217e1",
+          "name": "Margherita Pizza",
+          "category": "Main Course",
+          "price": 12.99,
+          "description": "Classic tomato and mozzarella"
+        },
+        {
+          "id": "2fea7ed2-a8f4-4ab1-992b-18902b006244",
+          "name": "Caesar Salad",
+          "category": "Appetizers",
+          "price": 8.99,
+          "description": "Crispy romaine with parmesan"
+        },
+        {
+          "id": "c9ec950e-90b4-425a-96a2-503e61aee92d",
+          "name": "Garlic Bread",
+          "category": "Appetizers",
+          "price": 5.99,
+          "description": "Toasted with herbs"
+        },
+        {
+          "id": "466def11-62c9-4684-832d-3eb0a91b6d5d",
+          "name": "Chocolate Lava Cake",
+          "category": "Desserts",
+          "price": 7.99,
+          "description": "Warm chocolate cake"
+        },
+        {
+          "id": "3c7852f3-605b-4ac3-8940-c15cfdb1af3f",
+          "name": "Tiramisu",
+          "category": "Desserts",
+          "price": 8.99,
+          "description": "Classic Italian dessert"
+        },
+        {
+          "id": "256ab959-2a08-4652-918e-ec19845feef1",
+          "name": "Coke",
+          "category": "Beverages",
+          "price": 2.99,
+          "description": "Chilled soft drink"
+        },
+        {
+          "id": "0bb7bf61-04b7-4539-a985-2c28439bdd43",
+          "name": "Fresh Juice",
+          "category": "Beverages",
+          "price": 4.99,
+          "description": "Orange or apple"
+        },
+        {
+          "id": "da9ad8b2-503d-4089-b1b2-e4230d84ce97",
+          "name": "Coffee",
+          "category": "Beverages",
+          "price": 3.99,
+          "description": "Freshly brewed"
+        },
+        {
+          "id": "2e83ce32-5c49-455c-b63f-9b078de78f16",
+          "name": "Test Pizza",
+          "category": "Main Course",
+          "price": 16.99,
+          "description": "Test pizza for automation"
+        }
+      ]
+    },
+    {
+      "test": "Add Items to Order",
+      "status": "PASS",
+      "response": {
+        "id": "323bf7eb-9419-45a3-bf9e-3e55f6c4500c",
+        "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+        "table_number": "T1",
+        "items": [
+          {
+            "id": "ac7956cd-2ff4-4ca6-94e0-21862474b89b",
+            "menu_item_id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+            "item_name": "Butter Chicken",
+            "quantity": 2,
+            "price": 15.99,
+            "is_manual": false,
+            "is_new": true,
+            "added_at": "2026-03-15T07:36:14.859724+00:00"
+          },
+          {
+            "id": "0abb2be3-059e-4b15-8dcf-608e7a816744",
+            "menu_item_id": null,
+            "item_name": "Custom Test Item",
+            "quantity": 1,
+            "price": 12.5,
+            "is_manual": true,
+            "is_new": true,
+            "added_at": "2026-03-15T07:36:14.859742+00:00"
+          }
+        ],
+        "total": 44.480000000000004,
+        "status": "active",
+        "created_at": "2026-03-15T07:36:14.637209+00:00",
+        "updated_at": "2026-03-15T07:36:14.859766+00:00"
+      }
+    },
+    {
+      "test": "Get Order Details",
+      "status": "PASS",
+      "response": {
+        "id": "323bf7eb-9419-45a3-bf9e-3e55f6c4500c",
+        "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+        "table_number": "T1",
+        "items": [
+          {
+            "id": "ac7956cd-2ff4-4ca6-94e0-21862474b89b",
+            "menu_item_id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+            "item_name": "Butter Chicken",
+            "quantity": 2,
+            "price": 15.99,
+            "is_manual": false,
+            "is_new": true,
+            "added_at": "2026-03-15T07:36:14.859724+00:00"
+          },
+          {
+            "id": "0abb2be3-059e-4b15-8dcf-608e7a816744",
+            "menu_item_id": null,
+            "item_name": "Custom Test Item",
+            "quantity": 1,
+            "price": 12.5,
+            "is_manual": true,
+            "is_new": true,
+            "added_at": "2026-03-15T07:36:14.859742+00:00"
+          }
+        ],
+        "total": 44.480000000000004,
+        "status": "active",
+        "created_at": "2026-03-15T07:36:14.637209+00:00",
+        "updated_at": "2026-03-15T07:36:14.859766+00:00"
+      }
+    },
+    {
+      "test": "Get Active Orders",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "859c8dab-d135-424c-ab21-7c40454113e7",
+          "table_id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "items": [],
+          "total": 0.0,
+          "status": "active",
+          "created_at": "2026-03-15T07:35:41.666845+00:00",
+          "updated_at": "2026-03-15T07:35:41.666845+00:00"
+        },
+        {
+          "id": "323bf7eb-9419-45a3-bf9e-3e55f6c4500c",
+          "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "items": [
+            {
+              "id": "ac7956cd-2ff4-4ca6-94e0-21862474b89b",
+              "menu_item_id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+              "item_name": "Butter Chicken",
+              "quantity": 2,
+              "price": 15.99,
+              "is_manual": false,
+              "is_new": true,
+              "added_at": "2026-03-15T07:36:14.859724+00:00"
+            },
+            {
+              "id": "0abb2be3-059e-4b15-8dcf-608e7a816744",
+              "menu_item_id": null,
+              "item_name": "Custom Test Item",
+              "quantity": 1,
+              "price": 12.5,
+              "is_manual": true,
+              "is_new": true,
+              "added_at": "2026-03-15T07:36:14.859742+00:00"
+            }
+          ],
+          "total": 44.480000000000004,
+          "status": "active",
+          "created_at": "2026-03-15T07:36:14.637209+00:00",
+          "updated_at": "2026-03-15T07:36:14.859766+00:00"
+        }
+      ]
+    },
+    {
+      "test": "Acknowledge Order",
+      "status": "PASS",
+      "response": {
+        "success": true
+      }
+    },
+    {
+      "test": "Complete Order",
+      "status": "PASS",
+      "response": {
+        "id": "323bf7eb-9419-45a3-bf9e-3e55f6c4500c",
+        "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+        "table_number": "T1",
+        "items": [
+          {
+            "id": "ac7956cd-2ff4-4ca6-94e0-21862474b89b",
+            "menu_item_id": "4c7f272d-dfbc-43b6-acaa-8d5c13ec33aa",
+            "item_name": "Butter Chicken",
+            "quantity": 2,
+            "price": 15.99,
+            "is_manual": false,
+            "is_new": false,
+            "added_at": "2026-03-15T07:36:14.859724+00:00"
+          },
+          {
+            "id": "0abb2be3-059e-4b15-8dcf-608e7a816744",
+            "menu_item_id": null,
+            "item_name": "Custom Test Item",
+            "quantity": 1,
+            "price": 12.5,
+            "is_manual": true,
+            "is_new": false,
+            "added_at": "2026-03-15T07:36:14.859742+00:00"
+          }
+        ],
+        "total": 44.480000000000004,
+        "status": "completed",
+        "created_at": "2026-03-15T07:36:14.637209+00:00",
+        "updated_at": "2026-03-15T07:36:15.253666+00:00"
+      }
+    },
+    {
+      "test": "Get Users (Admin)",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "968e2131-2fe7-412a-af96-749c93edb0dc",
+          "username": "admin",
+          "role": "admin"
+        },
+        {
+          "id": "0abf8a45-39d0-4c5a-ae99-11a490a75356",
+          "username": "staff",
+          "role": "staff"
+        }
+      ]
+    },
+    {
+      "test": "Get Users (Staff - Should Fail)",
+      "status": "PASS",
+      "response": {
+        "detail": "Admin access required"
+      }
+    },
+    {
+      "test": "Create User",
+      "status": "PASS",
+      "response": {
+        "id": "ceca22a7-8ba8-4ffb-a405-cf574e721ad0",
+        "username": "test_user_073615",
+        "role": "staff"
+      }
+    },
+    {
+      "test": "Delete Test User",
+      "status": "PASS",
+      "response": null
+    },
+    {
+      "test": "Get Currency Settings (Admin)",
+      "status": "PASS",
+      "response": {
+        "currency_symbol": "\u20ac",
+        "currency_code": "EUR"
+      }
+    },
+    {
+      "test": "Get Currency Settings (Staff)",
+      "status": "PASS",
+      "response": {
+        "currency_symbol": "\u20ac",
+        "currency_code": "EUR"
+      }
+    },
+    {
+      "test": "Update Currency Settings (Admin)",
+      "status": "PASS",
+      "response": {
+        "currency_symbol": "\u20ac",
+        "currency_code": "EUR"
+      }
+    },
+    {
+      "test": "Update Currency Settings (Staff - Should Fail)",
+      "status": "PASS",
+      "response": {
+        "detail": "Admin access required"
+      }
+    },
+    {
+      "test": "Update Currency Settings Again (Admin)",
+      "status": "PASS",
+      "response": {
+        "currency_symbol": "\u20b9",
+        "currency_code": "INR"
+      }
+    },
+    {
+      "test": "Restore Original Currency Settings",
+      "status": "PASS",
+      "response": {
+        "currency_symbol": "\u20ac",
+        "currency_code": "EUR"
+      }
+    },
+    {
+      "test": "Get Tables for Cancellation Test",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "capacity": 2,
+          "status": "running",
+          "current_order_id": "859c8dab-d135-424c-ab21-7c40454113e7"
+        },
+        {
+          "id": "90cf27ee-b93b-42d7-a42f-acfe4e935790",
+          "table_number": "T3",
+          "capacity": 6,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "9fc2d62b-191c-4880-9cf1-1974f2fc4244",
+          "table_number": "T4",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "c6374f62-ae21-479e-8760-9c5b99c751fe",
+          "table_number": "T5",
+          "capacity": 2,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "1324c392-db6d-4385-b106-2785c4e92397",
+          "table_number": "T6",
+          "capacity": 8,
+          "status": "available",
+          "current_order_id": null
+        }
+      ]
+    },
+    {
+      "test": "Create Order for Cancellation",
+      "status": "PASS",
+      "response": {
+        "id": "c7ab09fe-b1ad-4189-8890-88892e9ee332",
+        "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+        "table_number": "T1",
+        "items": [],
+        "total": 0.0,
+        "status": "active",
+        "created_at": "2026-03-15T07:36:16.672016+00:00",
+        "updated_at": "2026-03-15T07:36:16.672016+00:00"
+      }
+    },
+    {
+      "test": "Get Active Orders Before Cancellation",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "859c8dab-d135-424c-ab21-7c40454113e7",
+          "table_id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "items": [],
+          "total": 0.0,
+          "status": "active",
+          "created_at": "2026-03-15T07:35:41.666845+00:00",
+          "updated_at": "2026-03-15T07:35:41.666845+00:00"
+        },
+        {
+          "id": "c7ab09fe-b1ad-4189-8890-88892e9ee332",
+          "table_id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "items": [],
+          "total": 0.0,
+          "status": "active",
+          "created_at": "2026-03-15T07:36:16.672016+00:00",
+          "updated_at": "2026-03-15T07:36:16.672016+00:00"
+        }
+      ]
+    },
+    {
+      "test": "Cancel Order (DELETE endpoint)",
+      "status": "PASS",
+      "response": null
+    },
+    {
+      "test": "Get Active Orders After Cancellation",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "859c8dab-d135-424c-ab21-7c40454113e7",
+          "table_id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "items": [],
+          "total": 0.0,
+          "status": "active",
+          "created_at": "2026-03-15T07:35:41.666845+00:00",
+          "updated_at": "2026-03-15T07:35:41.666845+00:00"
+        }
+      ]
+    },
+    {
+      "test": "Get Tables After Cancellation",
+      "status": "PASS",
+      "response": [
+        {
+          "id": "c2d8e895-174a-4737-976f-2b8822e43de4",
+          "table_number": "T1",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "f27dec00-8307-4625-81e0-03cb470dbc98",
+          "table_number": "T2",
+          "capacity": 2,
+          "status": "running",
+          "current_order_id": "859c8dab-d135-424c-ab21-7c40454113e7"
+        },
+        {
+          "id": "90cf27ee-b93b-42d7-a42f-acfe4e935790",
+          "table_number": "T3",
+          "capacity": 6,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "9fc2d62b-191c-4880-9cf1-1974f2fc4244",
+          "table_number": "T4",
+          "capacity": 4,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "c6374f62-ae21-479e-8760-9c5b99c751fe",
+          "table_number": "T5",
+          "capacity": 2,
+          "status": "available",
+          "current_order_id": null
+        },
+        {
+          "id": "1324c392-db6d-4385-b106-2785c4e92397",
+          "table_number": "T6",
+          "capacity": 8,
+          "status": "available",
+          "current_order_id": null
+        }
+      ]
+    },
+    {
+      "test": "Cancel Non-Existent Order (Should Fail)",
+      "status": "PASS",
+      "response": {
+        "detail": "Order not found"
+      }
+    }
+  ]
+}
