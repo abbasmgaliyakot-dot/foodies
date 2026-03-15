@@ -36,9 +36,12 @@ const LoginPage = () => {
       <Card className="w-full max-w-md border-slate-200 shadow-lg">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            <div className="w-16 h-16 bg-[#E14D2A] rounded-full flex items-center justify-center">
-              <UtensilsCrossed className="w-8 h-8 text-white" />
-            </div>
+            {/* Replace YOUR_LOGO_URL with your actual logo URL */}
+            <img 
+              src="/logo.png" 
+              alt="Restaurant Logo" 
+              className="w-24 h-24 object-contain"
+            />
           </div>
           <div>
             <CardTitle className="text-3xl font-bold" style={{ fontFamily: 'DM Sans, sans-serif' }}>BistroFlow</CardTitle>
